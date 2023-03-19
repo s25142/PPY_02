@@ -23,7 +23,6 @@ for x in map.keys():
         ans = input(x)
         answers.append(ans)
 
-print(answers)
 c = 0
 for x in map.keys():
 
