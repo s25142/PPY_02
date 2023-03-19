@@ -16,10 +16,3 @@ print(b == c)
 print(type(a), hex(id(a)))
 print(type(b), hex(id(b)))
 print(type(c), hex(id(c)))
-
-l = ["sad", "da"]
-
-print(type(l))
-
-if type(l) is list :
-    print("siema")
