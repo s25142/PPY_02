@@ -1,48 +1,38 @@
-"odpowiedź: "
-
-"pytanie: "
-
-"Jakie masz na imie i nazwisko ?"
 
 
-"1.Najczęstszym sposobem spędzania wolnego czasu jest dla Ciebie: "
-    "oglądanie telewizji/filmów/seriali "
-    "słuchanie muzyki"
-    "podróżowanie"
-
-    "2. W jakich okolicznościach czytasz książki najczęściej ?"
-    "podczas podróży"
-    " w ogóle nie czytam"
-    "w czasie wolnym"
+map = {
+    "Jakie masz na imie i nazwisko ?" : " ",
+    "W jakich okolicznościach czytasz książki najczęściej ? " : ["podczas podróży", " w ogóle nie czytam"," w czasie wolnym"],
+"Po jakie gatunki książek sięgasz najczęściej ? " : [ " horrory","naukowe","fantastyke"],
+    "W jakim języku książki czytasz ? " : ["polskim","angielskim","rosyjskim"]
+}
 
 
-    "3. Po jakie gatunki książek sięgasz najczęściej ?"
-    " horrory"
-    "naukowe"
-    "fantastyke"
+answers = []
 
-    "4. W jakim języku książki czytasz? "
-    "polskim"
-    "angielskim"
-    "rosyjskim"
+for x in map.keys():
+    c = 1
+    if type(map[x]) is list:
+        print(x)
+        for a in map.get(x):
+            print(c, ". ", a)
+            c= c+1
+        ans_num = input("Podaj numer odpowiedzi: ")
+        answers.append(int(ans_num)-1)
+    else:
+        ans = input(x)
+        answers.append(ans)
 
-    "5. W jaki sposób najczęściej zdobywasz interesujące Cię tytuły?"
-    "wypożyczam w bibliotece stacjonarnej"
-    "kupuję przez internet"
-    "kupuję w księgarni stacjonarnej"
+print(answers)
+c = 0
+for x in map.keys():
 
-    "6. Jak często wypożyczasz książki w bibliotece"
-        "nigdy"
-        "raz w roku"
-        "raz na pol roku"
-        "raz na mięsiąc"
-
-    "7. Ile książek czytasz średnio w ciągu roku?"
-        "0"
-        "1"
-        "2 lub 3"
-        "4-10"
-
+    print("pytanie: ", x)
+    if type(map[x]) is list:
+        print("odpowiedz: ", map.get(x)[int(answers[c])])
+    else:
+        print("odpowiedz: ", answers[c])
+    c = c + 1
 
 
 
